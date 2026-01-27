@@ -1,0 +1,22 @@
+title: Black Trace
+markdown: kramdown
+
+collections:
+  cases:
+    output: true
+    permalink: /cases/:slug/
+  briefs:
+    output: true
+    permalink: /briefs/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: cases
+    values:
+      layout: case
+  - scope:
+      path: ""
+      type: briefs
+    values:
+      layout: default
