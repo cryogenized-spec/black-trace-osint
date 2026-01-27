@@ -1,0 +1,241 @@
+<div class="app">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__mark" aria-hidden="true"></div>
+      <div class="brand__text">
+        <div class="brand__title">BLACK TRACE</div>
+        <div class="brand__sub">AI-assisted open-source analysis for public record</div>
+      </div>
+    </div>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="#active" class="navlink">Active</a>
+      <a href="#topics" class="navlink">Topics</a>
+      <a href="#briefs" class="navlink">Briefs</a>
+      <a href="#methods" class="navlink">Methods</a>
+    </nav>
+
+    <div class="meta">
+      <div class="meta__row">
+        <span class="pill">GLOBAL</span>
+        <span class="pill pill--ok">LIVE</span>
+      </div>
+      <div class="meta__small">Updated: <strong>2026-01-27</strong> · v0.1</div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__copy">
+        <div class="kicker">CURRENT FOCUS</div>
+        <h1 class="h1">Maritime Attribution & Network Trace</h1>
+        <p class="lede">
+          Evidence-linked case files and rolling updates. Designed for fast reading and shareability
+          without losing sourcing discipline.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#active">Open active cases</a>
+          <a class="btn" href="#briefs">View latest briefs</a>
+        </div>
+
+        <!-- "Today relevance" jump guidance -->
+        <div class="notice">
+          <div class="notice__title">Rolling updates model</div>
+          <div class="notice__body">
+            Each case opens at <strong>Today’s Relevance</strong> (top section), with prior updates below.
+          </div>
+        </div>
+
+        <!-- Micro disclaimer, not dry -->
+        <div class="fineprint">
+          Open-source compilation with AI-assisted triage. Assessments are confidence-graded and revision-tracked.
+          No private access, no impersonation, no provocation.
+        </div>
+      </div>
+
+      <!-- Art panel (hybrid approach) -->
+      <aside class="hero__art" aria-label="Mascot panel">
+        <div class="artframe">
+          <!-- Replace the URL below with your own hosted image -->
+          <img
+            src="https://images.unsplash.com/photo-1520975958225-49f5d0b9dfb1?auto=format&fit=crop&w=900&q=70"
+            alt="Mascot / observer illustration placeholder"
+          />
+          <div class="artframe__overlay">
+            <div class="sig">
+              <div class="sig__patch" aria-hidden="true"></div>
+              <div class="sig__text">
+                <div class="sig__title">ANALYSIS DESK</div>
+                <div class="sig__sub">Unit mark · Evidence-first</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Active Cases -->
+    <section class="section" id="active" aria-label="Active cases">
+      <div class="section__head">
+        <h2 class="h2">Active Case Files</h2>
+        <div class="section__meta">Rolling updates · tap to open</div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card__top">
+            <div class="code">BT-CAS-0001</div>
+            <div class="tags">
+              <span class="tag tag--hi">HIGH</span>
+              <span class="tag">Maritime</span>
+              <span class="tag">Attribution</span>
+            </div>
+          </div>
+          <h3 class="h3">Suspected discharge event — coastal impact & vessel candidates</h3>
+          <p class="card__p">
+            Evidence chain: shoreline reports → wind/current → AIS gaps → proximity set → ownership graph.
+          </p>
+          <div class="card__bottom">
+            <div class="kv">
+              <span class="k">Status</span><span class="v">Attribution</span>
+            </div>
+            <div class="kv">
+              <span class="k">Last update</span><span class="v">2026-01-27</span>
+            </div>
+            <a class="link" href="#">Open case →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__top">
+            <div class="code">BT-CAS-0002</div>
+            <div class="tags">
+              <span class="tag tag--med">MED</span>
+              <span class="tag">Cyber</span>
+              <span class="tag">Influence</span>
+            </div>
+          </div>
+          <h3 class="h3">Coordinated narrative push — timeline and amplification mapping</h3>
+          <p class="card__p">
+            Public posts clustered by timing, language reuse, and account adjacency. No private access.
+          </p>
+          <div class="card__bottom">
+            <div class="kv">
+              <span class="k">Status</span><span class="v">Monitoring</span>
+            </div>
+            <div class="kv">
+              <span class="k">Last update</span><span class="v">2026-01-26</span>
+            </div>
+            <a class="link" href="#">Open case →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Topics -->
+    <section class="section" id="topics" aria-label="Topics">
+      <div class="section__head">
+        <h2 class="h2">Topics</h2>
+        <div class="section__meta">Primary categorization · “Other” falls into chronology</div>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="#">
+          <div class="tile__title">Maritime & Sanctions</div>
+          <div class="tile__sub">Tankers · flags · shell companies · port risk</div>
+        </a>
+        <a class="tile" href="#">
+          <div class="tile__title">Cyber & Influence</div>
+          <div class="tile__sub">Public ecosystems · narratives · coordination signals</div>
+        </a>
+        <a class="tile" href="#">
+          <div class="tile__title">Militias & Proxies</div>
+          <div class="tile__sub">Links · logistics · declared affiliations</div>
+        </a>
+        <a class="tile" href="#">
+          <div class="tile__title">Arms & Tech</div>
+          <div class="tile__sub">Drones · procurement · battlefield diffusion</div>
+        </a>
+        <a class="tile" href="#">
+          <div class="tile__title">Energy & Infrastructure</div>
+          <div class="tile__sub">Ports · pipelines · undersea cables</div>
+        </a>
+        <a class="tile tile--alt" href="#">
+          <div class="tile__title">Other / Chronology</div>
+          <div class="tile__sub">YYYY-MM-DD index for uncategorized items</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Latest Briefs -->
+    <section class="section" id="briefs" aria-label="Latest briefs">
+      <div class="section__head">
+        <h2 class="h2">Latest Briefs</h2>
+        <div class="section__meta">Short executive summaries · shareable</div>
+      </div>
+
+      <div class="list">
+        <a class="row" href="#">
+          <div class="row__left">
+            <div class="row__title">Brief: Vessel candidate set narrowed via drift & proximity</div>
+            <div class="row__sub">Maritime & Sanctions · 3 min read</div>
+          </div>
+          <div class="row__right">
+            <span class="date">2026-01-27</span>
+            <span class="chev">→</span>
+          </div>
+        </a>
+
+        <a class="row" href="#">
+          <div class="row__left">
+            <div class="row__title">Brief: Pattern of coordinated posting around incident window</div>
+            <div class="row__sub">Cyber & Influence · 4 min read</div>
+          </div>
+          <div class="row__right">
+            <span class="date">2026-01-26</span>
+            <span class="chev">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Methods -->
+    <section class="section" id="methods" aria-label="Methods">
+      <div class="section__head">
+        <h2 class="h2">Methods & Standards</h2>
+        <div class="section__meta">How we avoid confident nonsense</div>
+      </div>
+
+      <div class="methods">
+        <div class="method">
+          <div class="method__t">Confidence grading</div>
+          <div class="method__p">High / Medium / Low based on evidence density, corroboration, and uncertainty.</div>
+        </div>
+        <div class="method">
+          <div class="method__t">Evidence chain</div>
+          <div class="method__p">Claims link to sources; updates are appended; corrections are logged.</div>
+        </div>
+        <div class="method">
+          <div class="method__t">AI role</div>
+          <div class="method__p">AI assists triage and synthesis. Publication decisions remain human-reviewed.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <div class="footer__left">
+        <div class="footer__title">BLACK TRACE</div>
+        <div class="footer__sub">Evidence-linked assessments · Revision tracked</div>
+      </div>
+      <div class="footer__right">
+        <a class="footlink" href="#">Corrections</a>
+        <a class="footlink" href="#">Archive</a>
+        <a class="footlink" href="#">Contact</a>
+      </div>
+    </footer>
+  </main>
+</div>
