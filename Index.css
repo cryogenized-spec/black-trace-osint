@@ -530,3 +530,27 @@ body{
     max-width: 940px;
   }
 }
+
+.casehead__title{
+  font-weight:850;
+  letter-spacing:0.6px;
+  font-size:20px;
+  margin-bottom:8px;
+}
+.casehead__meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:10px;
+}
+.casehead__summary{
+  color: var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
+.rule{
+  border:0;
+  border-top:1px solid rgba(255,255,255,0.10);
+  margin:12px 0 0;
+}
