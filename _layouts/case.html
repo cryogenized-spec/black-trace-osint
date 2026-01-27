@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="casehead">
+  <div class="casehead__title">{{ page.title }}</div>
+
+  <div class="casehead__meta">
+    {% if page.case_id %}<span class="pill">{{ page.case_id }}</span>{% endif %}
+    {% if page.status %}<span class="pill">{{ page.status }}</span>{% endif %}
+    {% if page.confidence %}<span class="pill pill--ok">{{ page.confidence }}</span>{% endif %}
+    {% if page.updated %}<span class="pill">Updated: {{ page.updated }}</span>{% endif %}
+  </div>
+
+  {% if page.summary %}
+    <div class="casehead__summary">{{ page.summary }}</div>
+  {% endif %}
+</div>
+
+<hr class="rule" />
+
+{{ content }}
