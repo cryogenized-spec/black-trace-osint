@@ -1,6 +1,8 @@
 title: Black Trace
 markdown: kramdown
-
+kramdown:
+  toc_levels: 2..3
+  
 collections:
   cases:
     output: true
@@ -20,3 +22,4 @@ defaults:
       type: briefs
     values:
       layout: default
+
