@@ -17,7 +17,10 @@ tags:
 ---
 <div class="toc">
   <div class="toc__title">Case Navigation</div>
-  {:toc}
+
+* TOC
+{:toc}
+
 </div>
 
 ## Today’s Relevance — 2026-01-27
