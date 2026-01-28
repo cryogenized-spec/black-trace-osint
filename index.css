@@ -723,35 +723,40 @@ body{
 }
 .pill--conf:has(+*){} /* harmless; ignore if unsupported */
 
-<div class="evidence">
-  <div class="evidence__head">
-    <span class="pill {% if include.confidence == 'High' %}pill--ok{% endif %}">
-      Confidence: {{ include.confidence | default: "Unrated" }}
-    </span>
-    {% if include.date %}
-      <span class="pill">As of: {{ include.date }}</span>
-    {% endif %}
-  </div>
+.casegrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+}
 
-  {% if include.claim %}
-    <div class="evidence__claim">{{ include.claim }}</div>
-  {% endif %}
+.casebody{ min-width:0; }
 
-  {% if include.sources %}
-    <div class="evidence__sources">
-      <div class="evidence__label">Sources</div>
-      <div class="evidence__list">
-        {{ include.sources }}
-      </div>
-    </div>
-  {% endif %}
+.toc{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding:14px;
+}
 
-  {% if include.notes %}
-    <div class="evidence__notes">
-      <div class="evidence__label">Notes / Gaps</div>
-      <div class="evidence__list">
-        {{ include.notes }}
-      </div>
-    </div>
-  {% endif %}
-</div>
+.toc__title{
+  font-weight:800;
+  margin-bottom:10px;
+  letter-spacing:0.6px;
+}
+
+.toc ul{ margin:0; padding-left:18px; }
+.toc a{ text-decoration:none; }
+.toc a:hover{ text-decoration:underline; }
+
+@media (min-width: 980px){
+  .casegrid{
+    grid-template-columns: 320px 1fr;
+    align-items:start;
+  }
+  .toc{
+    position: sticky;
+    top: 90px; /* below topbar */
+    max-height: calc(100vh - 110px);
+    overflow:auto;
+  }
+}
