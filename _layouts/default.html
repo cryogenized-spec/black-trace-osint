@@ -5,33 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title }} — BLACK TRACE</title>
   <link rel="stylesheet" href="{{ '/index.css' | relative_url }}">
-  <style>body{outline:4px solid red;}</style>
 </head>
 
 <body>
   <div class="app">
-  <header class="topbar">
-    <div class="brand">
-      <div class="brand__mark" aria-hidden="true"></div>
-      <div class="brand__text">
-        <div class="brand__title">BLACK TRACE</div>
-        <div class="brand__sub">AI-assisted open-source analysis for public record</div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true"></div>
+        <div class="brand__text">
+          <div class="brand__title">BLACK TRACE</div>
+          <div class="brand__sub">AI-assisted open-source analysis for public record</div>
+        </div>
       </div>
-    </div>
-    <div class="meta">
-      <div class="meta__row">
-        <span class="pill">GLOBAL</span>
-        <span class="pill pill--ok">LIVE</span>
-      </div>
-      <div class="meta__small">Black Trace OSINT Vault</div>
-    </div>
-  </header>
 
-  <main class="main">
-    <div class="section">
-      {{ content }}
-    </div>
-  </main>
+      <nav class="topnav" aria-label="Primary">
+        <a href="{{ '/' | relative_url }}#active" class="navlink">Active</a>
+        <a href="{{ '/' | relative_url }}#topics" class="navlink">Topics</a>
+        <a href="{{ '/' | relative_url }}#briefs" class="navlink">Briefs</a>
+        <a href="{{ '/' | relative_url }}#methods" class="navlink">Methods</a>
+      </nav>
+
+      <div class="meta">
+        <div class="meta__row">
+          <span class="pill">GLOBAL</span>
+          <span class="pill pill--ok">LIVE</span>
+        </div>
+        <div class="meta__small">Black Trace OSINT Vault</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="section">
+        {{ content }}
+      </div>
+    </main>
   </div>
 </body>
 </html>
