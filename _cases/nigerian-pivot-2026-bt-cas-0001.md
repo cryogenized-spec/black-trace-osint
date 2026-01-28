@@ -17,7 +17,8 @@ tags:
 ---
 
 <div class="toc">
-  <div class="toc__title">Case Navigation</div>
+  <div class="toc__title">Case Navigation
+  </div>
 
 * TOC
 {:toc}
