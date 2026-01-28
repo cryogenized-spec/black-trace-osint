@@ -694,3 +694,10 @@ body{
   color: rgba(79,220,255,0.95);
   border-bottom: none;
 }
+
+/* Subtle meta pill (build date, etc) */
+.pill--subtle{
+  opacity: 0.75;
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
