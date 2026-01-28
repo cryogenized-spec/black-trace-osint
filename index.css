@@ -760,3 +760,34 @@ body{
     overflow:auto;
   }
 }
+
+.evidence{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding:14px;
+  margin:14px 0;
+}
+
+.evidence__head{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+.evidence__claim{
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.evidence__label{
+  font-size:12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin:10px 0 6px;
+}
+
+.evidence__list a{ text-decoration:none; }
+.evidence__list a:hover{ text-decoration:underline; }
