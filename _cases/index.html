@@ -6,34 +6,86 @@ title: Case Vault
 <section class="section">
   <div class="section__head">
     <h2 class="h2">Case Vault</h2>
-    <div class="section__meta">All published investigations · newest first</div>
+    <div class="section__meta">All published investigations · grouped by status</div>
   </div>
 
+  {% assign active = site.cases | where: "status", "Active" | sort: "updated" | reverse %}
+  {% assign monitoring = site.cases | where: "status", "Monitoring" | sort: "updated" | reverse %}
+  {% assign other = site.cases | where_exp: "c", "c.status != 'Active' and c.status != 'Monitoring'" | sort: "updated" | reverse %}
+
+  {% if active.size > 0 %}
+  <h3 class="h3">Active Cases</h3>
   <div class="cards">
-    {% assign sorted = site.cases | sort: "updated" | reverse %}
-    {% for case in sorted %}
-    <article class="card">
-      <div class="card__top">
-        <div class="code">{{ case.case_id }}</div>
-        <div class="tags">
-          <span class="tag">{{ case.status }}</span>
-          <span class="tag">{{ case.confidence }}</span>
+    {% for case in active %}
+      <article class="card">
+        <div class="card__top">
+          <div class="code">{{ case.case_id }}</div>
+          <div class="tags">
+            <span class="tag tag--hi">ACTIVE</span>
+            <span class="tag">{{ case.confidence }}</span>
+          </div>
         </div>
-      </div>
-      <h3 class="h3">
-        <a href="{{ case.url }}">{{ case.title }}</a>
-      </h3>
-      <div class="card__bottom">
-        <div class="kv">
-          <span class="k">Updated</span>
-          <span class="v">{{ case.updated }}</span>
+        <h3 class="h3">
+          <a href="{{ case.url | relative_url }}">{{ case.title }}</a>
+        </h3>
+        <div class="card__bottom">
+          <div class="kv">
+            <span class="k">Updated</span>
+            <span class="v">{{ case.updated }}</span>
+          </div>
+          {% if case.region %}
+          <div class="kv">
+            <span class="k">Region</span>
+            <span class="v">{{ case.region }}</span>
+          </div>
+          {% endif %}
         </div>
-        <div class="kv">
-          <span class="k">Region</span>
-          <span class="v">{{ case.region }}</span>
-        </div>
-      </div>
-    </article>
+      </article>
     {% endfor %}
   </div>
+  {% endif %}
+
+  {% if monitoring.size > 0 %}
+  <h3 class="h3" style="margin-top:18px;">Monitoring</h3>
+  <div class="cards">
+    {% for case in monitoring %}
+      <article class="card">
+        <div class="card__top">
+          <div class="code">{{ case.case_id }}</div>
+          <div class="tags">
+            <span class="tag">Monitoring</span>
+            <span class="tag">{{ case.confidence }}</span>
+          </div>
+        </div>
+        <h3 class="h3">
+          <a href="{{ case.url | relative_url }}">{{ case.title }}</a>
+        </h3>
+        <div class="card__bottom">
+          <div class="kv">
+            <span class="k">Updated</span>
+            <span class="v">{{ case.updated }}</span>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if other.size > 0 %}
+  <h3 class="h3" style="margin-top:18px;">Other / Archived</h3>
+  <div class="list">
+    {% for case in other %}
+      <a class="row" href="{{ case.url | relative_url }}">
+        <div class="row__left">
+          <div class="row__title">{{ case.case_id }} · {{ case.title }}</div>
+          <div class="row__sub">{{ case.status }} · {{ case.confidence }}</div>
+        </div>
+        <div class="row__right">
+          <span class="date">{{ case.updated }}</span>
+          <span class="chev">→</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  {% endif %}
 </section>
