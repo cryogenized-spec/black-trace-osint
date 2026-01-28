@@ -2,6 +2,7 @@ title: Black Trace
 markdown: kramdown
 kramdown:
   toc_levels: 2..3
+  parse_block_html: true
   
 collections:
   cases:
