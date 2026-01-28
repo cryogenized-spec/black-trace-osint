@@ -670,3 +670,27 @@ body{
 .dbox--warn{ border-color: rgba(255,184,77,0.30); background: rgba(255,184,77,0.06); }
 .dbox--src{ border-color: rgba(180,140,255,0.26); background: rgba(180,140,255,0.06); }
 
+/* ========== CASE TABLE OF CONTENTS ========== */
+.toc{
+  margin: 14px 0 20px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+.toc__title{
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+.toc ul{
+  list-style: none;
+  padding-left: 0;
+}
+.toc li{
+  margin: 6px 0;
+}
+.toc a{
+  color: rgba(79,220,255,0.95);
+  border-bottom: none;
+}
