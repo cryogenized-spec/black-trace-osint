@@ -1,4 +1,6 @@
 title: Black Trace
+baseurl: "/black-trace-osint"
+url: "https://cryogenized-spec.github.io"
 markdown: kramdown
 kramdown:
   toc_levels: 2..3
