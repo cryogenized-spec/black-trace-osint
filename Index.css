@@ -554,3 +554,119 @@ body{
   border-top:1px solid rgba(255,255,255,0.10);
   margin:12px 0 0;
 }
+
+/* ========== DOSSIER MARKDOWN UPGRADE ========== */
+
+/* Improve the main reading column on case pages */
+.prose{
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: 0.15px;
+}
+.prose h1, .prose h2, .prose h3{
+  letter-spacing: 0.6px;
+}
+.prose h2{
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+.prose h3{
+  margin-top: 18px;
+}
+
+/* Stronger emphasis */
+.prose strong{
+  color: rgba(255,255,255,0.92);
+}
+
+/* Better lists */
+.prose ul{
+  padding-left: 18px;
+}
+.prose li{
+  margin: 6px 0;
+}
+
+/* Code blocks / inline code (for IDs, coordinates, URLs, etc.) */
+.prose code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.prose pre{
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Blockquotes become 'Analyst Notes' style callouts */
+.prose blockquote{
+  margin: 14px 0;
+  padding: 12px 12px 12px 14px;
+  border-left: 3px solid rgba(79,220,255,0.8);
+  background: rgba(79,220,255,0.06);
+  border-radius: 14px;
+  color: rgba(255,255,255,0.85);
+}
+.prose blockquote p{
+  margin: 0;
+}
+
+/* Tables look like briefings, not spreadsheets */
+.prose table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+.prose th, .prose td{
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  vertical-align: top;
+}
+.prose th{
+  font-weight: 700;
+  color: rgba(255,255,255,0.90);
+  background: rgba(255,255,255,0.04);
+}
+.prose tr:last-child td{
+  border-bottom: none;
+}
+
+/* Links */
+.prose a{
+  color: rgba(79,220,255,0.95);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(79,220,255,0.35);
+}
+.prose a:hover{
+  border-bottom-color: rgba(79,220,255,0.85);
+}
+
+/* Dossier blocks you can use in Markdown via simple HTML */
+.dbox{
+  margin: 14px 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+.dbox__t{
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,0.92);
+}
+.dbox--kj{ border-color: rgba(79,220,255,0.25); background: rgba(79,220,255,0.06); }
+.dbox--warn{ border-color: rgba(255,184,77,0.30); background: rgba(255,184,77,0.06); }
+.dbox--src{ border-color: rgba(180,140,255,0.26); background: rgba(180,140,255,0.06); }
+
