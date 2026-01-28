@@ -1,0 +1,39 @@
+---
+layout: default
+title: Case Vault
+---
+
+<section class="section">
+  <div class="section__head">
+    <h2 class="h2">Case Vault</h2>
+    <div class="section__meta">All published investigations · newest first</div>
+  </div>
+
+  <div class="cards">
+    {% assign sorted = site.cases | sort: "updated" | reverse %}
+    {% for case in sorted %}
+    <article class="card">
+      <div class="card__top">
+        <div class="code">{{ case.case_id }}</div>
+        <div class="tags">
+          <span class="tag">{{ case.status }}</span>
+          <span class="tag">{{ case.confidence }}</span>
+        </div>
+      </div>
+      <h3 class="h3">
+        <a href="{{ case.url }}">{{ case.title }}</a>
+      </h3>
+      <div class="card__bottom">
+        <div class="kv">
+          <span class="k">Updated</span>
+          <span class="v">{{ case.updated }}</span>
+        </div>
+        <div class="kv">
+          <span class="k">Region</span>
+          <span class="v">{{ case.region }}</span>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
