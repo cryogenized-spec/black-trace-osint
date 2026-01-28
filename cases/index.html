@@ -1,0 +1,76 @@
+---
+layout: default
+title: Case Vault
+permalink: /cases/
+---
+
+<section class="section">
+  <div class="section__head">
+    <h2 class="h2">Case Vault</h2>
+    <div class="section__meta">All cases · auto-generated from the repository</div>
+  </div>
+
+  {% assign active = site.cases | where: "status", "Active" | sort: "updated" | reverse %}
+  {% assign monitoring = site.cases | where: "status", "Monitoring" | sort: "updated" | reverse %}
+  {% assign other = site.cases | where_exp: "c", "c.status != 'Active' and c.status != 'Monitoring'" | sort: "updated" | reverse %}
+
+  <h3 class="h3">Active</h3>
+  <div class="cards">
+    {% for c in active %}
+      <article class="card">
+        <div class="card__top">
+          <div class="code">{{ c.case_id }}</div>
+          <div class="tags">
+            <span class="tag tag--med">{{ c.confidence }}</span>
+            {% for t in c.tags limit:2 %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+        </div>
+        <h4 class="h3">{{ c.title }}</h4>
+        <p class="card__p">{{ c.summary }}</p>
+        <div class="card__bottom">
+          <div class="kv"><span class="k">Status</span><span class="v">{{ c.status }}</span></div>
+          <div class="kv"><span class="k">Last update</span><span class="v">{{ c.updated }}</span></div>
+          <a class="link" href="{{ c.url | relative_url }}">Open case →</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <h3 class="h3" style="margin-top:18px;">Monitoring</h3>
+  <div class="cards">
+    {% for c in monitoring %}
+      <article class="card">
+        <div class="card__top">
+          <div class="code">{{ c.case_id }}</div>
+          <div class="tags">
+            <span class="tag">{{ c.confidence }}</span>
+          </div>
+        </div>
+        <h4 class="h3">{{ c.title }}</h4>
+        <p class="card__p">{{ c.summary }}</p>
+        <div class="card__bottom">
+          <div class="kv"><span class="k">Last update</span><span class="v">{{ c.updated }}</span></div>
+          <a class="link" href="{{ c.url | relative_url }}">Open case →</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if other.size > 0 %}
+    <h3 class="h3" style="margin-top:18px;">Other</h3>
+    <div class="list">
+      {% for c in other %}
+        <a class="row" href="{{ c.url | relative_url }}">
+          <div class="row__left">
+            <div class="row__title">{{ c.case_id }} · {{ c.title }}</div>
+            <div class="row__sub">{{ c.status }} · {{ c.confidence }}</div>
+          </div>
+          <div class="row__right">
+            <span class="date">{{ c.updated }}</span>
+            <span class="chev">→</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
