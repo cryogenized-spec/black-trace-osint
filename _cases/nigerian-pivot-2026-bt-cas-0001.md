@@ -15,6 +15,10 @@ tags:
   - Illicit finance
   - Energy & resources
 ---
+<div class="toc">
+  <div class="toc__title">Case Navigation</div>
+  {:toc}
+</div>
 
 ## Today’s Relevance — 2026-01-27
 
