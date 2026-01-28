@@ -701,3 +701,24 @@ body{
   border-color: rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.03);
 }
+
+/* Subtle meta pill (build date, etc) */
+.pill--subtle{
+  opacity: 0.75;
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
+/* Confidence pill color-coding */
+.pill--conf{
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+}
+.pill--conf::before{
+  content:"";
+  display:inline-block;
+  width:8px; height:8px;
+  border-radius:99px;
+  margin-right:8px;
+  background: rgba(160,160,160,0.9); /* default */
+}
+.pill--conf:has(+*){} /* harmless; ignore if unsupported */
