@@ -8,9 +8,8 @@ layout: default
   <div class="casehead__meta">
     {% if page.case_id %}<span class="pill">{{ page.case_id }}</span>{% endif %}
     {% if page.status %}<span class="pill">{{ page.status }}</span>{% endif %}
-    {% if page.confidence %}<span class="pill pill--conf">{{ page.confidence }}</span>{% endif %}
+    {% if page.confidence %}<span class="pill pill--ok">{{ page.confidence }}</span>{% endif %}
     {% if page.updated %}<span class="pill">Updated: {{ page.updated }}</span>{% endif %}
-<span class="pill pill--subtle">Build: {{ site.time | date: "%Y-%m-%d" }}</span>
   </div>
 
   {% if page.summary %}
@@ -20,4 +19,13 @@ layout: default
 
 <hr class="rule" />
 
-{{ content }}
+<div class="casegrid">
+  <aside class="toc">
+    <div class="toc__title">Case Navigation</div>
+    {:toc}
+  </aside>
+
+  <article class="casebody">
+    {{ content }}
+  </article>
+</div>
