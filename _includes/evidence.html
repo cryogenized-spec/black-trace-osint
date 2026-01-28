@@ -1,0 +1,32 @@
+<div class="evidence">
+  <div class="evidence__head">
+    <span class="pill {% if include.confidence == 'High' %}pill--ok{% endif %}">
+      Confidence: {{ include.confidence | default: "Unrated" }}
+    </span>
+    {% if include.date %}
+      <span class="pill">As of: {{ include.date }}</span>
+    {% endif %}
+  </div>
+
+  {% if include.claim %}
+    <div class="evidence__claim">{{ include.claim }}</div>
+  {% endif %}
+
+  {% if include.sources %}
+    <div class="evidence__sources">
+      <div class="evidence__label">Sources</div>
+      <div class="evidence__list">
+        {{ include.sources }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if include.notes %}
+    <div class="evidence__notes">
+      <div class="evidence__label">Notes / Gaps</div>
+      <div class="evidence__list">
+        {{ include.notes }}
+      </div>
+    </div>
+  {% endif %}
+</div>
